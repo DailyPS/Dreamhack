@@ -7,10 +7,12 @@
 
 void get_string(char *buf, size_t size) {
   ssize_t i = read(0, buf, size);
+
   if (i == -1) {
     perror("read");
     exit(1);
   }
+
   if (i < size) {
     if (i > 0 && buf[i - 1] == '\n') i--;
     buf[i] = 0;
@@ -28,6 +30,7 @@ int main() {
     get_string(buf, 0x20);
     printf(buf);
     puts("");
+    
     if (changeme == 1337) {
       system("/bin/sh");
     }
