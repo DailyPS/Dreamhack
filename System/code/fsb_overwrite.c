@@ -30,7 +30,7 @@ int main() {
     get_string(buf, 0x20);
     printf(buf);
     puts("");
-    
+
     if (changeme == 1337) {
       system("/bin/sh");
     }
